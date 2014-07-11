@@ -10,7 +10,9 @@
 
 class StubSensor {
 public:
+    void arrangeReturnPressureValue(double);
 private:
+    double returnPressureValue;
 
 };
 

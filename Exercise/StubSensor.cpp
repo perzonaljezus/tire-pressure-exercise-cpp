@@ -7,5 +7,7 @@
 
 #include "StubSensor.h"
 
-
+void StubSensor::arrangeReturnPressureValue(double pressureValue) {
+    returnPressureValue = pressureValue;
+}
 
