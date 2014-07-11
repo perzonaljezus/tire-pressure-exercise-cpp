@@ -80,10 +80,11 @@ StubSensor.o : $(USER_DIR)/StubSensor.cpp $(USER_DIR)/StubSensor.h $(GTEST_HEADE
 Alarm.o : $(USER_DIR)/Alarm.cpp $(USER_DIR)/Alarm.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c -std=c++11 $(USER_DIR)/Alarm.cpp
 
-AlarmTest.o : $(USER_DIR)/AlarmTest.cpp $(USER_DIR)/Alarm.h $(GTEST_HEADERS)
+AlarmTest.o : $(USER_DIR)/AlarmTest.cpp $(USER_DIR)/Alarm.h \
+	$(USER_DIR)/StubSensor.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c -std=c++11 $(USER_DIR)/AlarmTest.cpp
 
-AlarmTest: Sensor.o Alarm.o AlarmTest.o gtest_main.a
+AlarmTest: Sensor.o StubSensor.o Alarm.o AlarmTest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 #
 #  There exist several targets which are by default empty and which can be 
