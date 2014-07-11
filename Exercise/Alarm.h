@@ -8,10 +8,9 @@ public:
 	Alarm();
 	void check();
 	bool isAlarmOn();
+	static const double LOW_PRESSURE_THRESHOLD;
+	static const double HIGH_PRESSURE_THRESHOLD;
 private:
-	// TODO: Use all uppercase letters for constants
-	static const double LowPressureThreshold;
-	static const double HighPressureThreshold;
 	Sensor* sensor;
 	bool alarmOn;
 };
