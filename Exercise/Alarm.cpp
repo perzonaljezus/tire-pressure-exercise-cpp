@@ -1,7 +1,7 @@
 #include "Alarm.h"
 
 void Alarm::check() {
-	double psiPressureValue = sensor->popNextPressurePsiValue();
+	double psiPressureValue = transducer->popNextPressurePsiValue();
 
 	if (psiPressureValue < LOW_PRESSURE_THRESHOLD || HIGH_PRESSURE_THRESHOLD < psiPressureValue) {
 		alarmOn = true;
@@ -13,7 +13,6 @@ bool Alarm::isAlarmOn() {
 }
 
 Alarm::Alarm() {
-	// TODO-working-on: Depending on a concrete Sensor violates the Dependency Inversion Principle and Open-Closed Principle    
   Alarm(new Sensor);
 }
 
