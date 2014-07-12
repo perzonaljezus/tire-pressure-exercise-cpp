@@ -19,5 +19,5 @@ void StubSensor::arrangeReturnPressureValues(double valueNormal
 }
 
 double StubSensor::popNextPressurePsiValue() {
-  return returnPressureValue;
+  return pressureValues[pressureValueIndex++];
 }
