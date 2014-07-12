@@ -16,7 +16,8 @@ public:
     void arrangeReturnPressureValues(double, double, double);
     double popNextPressurePsiValue() override;
 private:
-    double *pressureValues[3];
+    double pressureValues[3] = {0, 0, 0};
+    int pressureValueIndex = 0;
 
 };
 
