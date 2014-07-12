@@ -38,6 +38,8 @@ TEST(AlarmTest, a_normal_pressure_value_after_a_value_outside_the_range_should_s
   
   // Act
   alarm->check();
+  alarm->check();
+  alarm->check();
   
   // Assert
   EXPECT_FALSE(alarm->isAlarmOn());
