@@ -22,4 +22,3 @@
 
 # ignore cmake-build folder for building all samples of google test
 cmake-build
-nbproject
